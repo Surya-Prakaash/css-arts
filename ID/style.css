@@ -95,7 +95,7 @@ body {
     z-index: 2;
     position: absolute;
     top: -34px;
-	right: 0px;
+	right: -1px;
 }
 
 .base::after {
