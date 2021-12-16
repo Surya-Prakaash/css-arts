@@ -1,0 +1,313 @@
+body {
+	height: 100vh;
+	width: 100vw;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #179e9e;
+}
+
+.perspective {
+	perspective: 750px;
+	perspective-origin: bottom;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+	width: 300px;
+	height:310px;
+	box-sizing: border-box;
+	background-color: #303030;
+	border-radius: 2px 2px 0px 0px;
+	border:2px solid white;
+	position: relative;
+	top: 0px;
+	z-index: 0;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+}
+
+.background1 {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	width: 295px;
+	height:305px;
+	background-image: repeating-conic-gradient(#202020 0deg 45deg,#151515 45deg 90deg);
+	background-size: 25px 25px;
+	position: relative;
+	top: 0px;
+	z-index: 0;
+	opacity: 0.5;
+}
+
+.photo-frame {
+	width: 100px;
+	height: 100px;
+	transform: rotateZ(45deg);
+	background-image: url("file:///C:/Users/HP/Desktop/Suryaprakaash1.jpg");
+    background-size: 100px;
+    background-position-x: -1px;
+    background-position-y: -16px;
+    background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+    position: absolute;
+    top: 210px;
+    left: 100px;
+    border-radius: 2px;
+	box-shadow:4px 3px 10px 1px black;
+	border: 4px solid #dfbd00;
+	box-sizing: border-box;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+}
+
+
+.base {
+	width: 300px;
+	height: 60px;
+	background-color: #dfbd00;
+	z-index: 1;
+	position:absolute;
+	top: 308px;
+	left: 0px;
+	box-sizing: border-box;
+	border: 2px solid white;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+}
+
+.base::before {
+	content: "";
+	display: flex;
+	width: 1px;
+    height: 1px;
+    border-top: 32px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 150px solid #dfbd00;
+    border-bottom: 50px solid transparent;
+    z-index: 2;
+    position: absolute;
+    top: -34px;
+	right: -1px;
+}
+
+.base::after {
+	content: "";
+	display: flex;
+	width: 1px;
+    height: 1px;
+    border-top: 32px solid transparent;
+    border-left: 150px solid #dfbd00;
+    border-right: 10px solid transparent;
+    border-bottom: 50px solid transparent;
+    z-index: 2;
+    position: absolute;
+    top: -34px;
+    left: 0px;
+}
+
+.bar1, .bar2, .bar3, .bar4 {
+	z-index: 0;
+	position: absolute;
+	width:200px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+}
+
+.bar1 {
+    height: 25px;
+    background-image: linear-gradient(45deg,#98b3ff00 0% 8%, #98b3ff);
+    transform: rotateZ(45deg); 
+    top: 250px;
+    left: -34px;
+}
+
+.bar2 {
+    height: 25px;
+    background-image: linear-gradient(-45deg,#98b3ff00 0% 8%, #98b3ff);
+    transform: rotateZ(-45deg);
+    top: 245px;
+    left: 134px;
+}
+
+.bar3 {
+	width: 140px;
+    height: 15px;
+    background-image: linear-gradient(-45deg,#98b3ff00 0% 8%, #98b3ff);
+    transform: rotateZ(-45deg);
+    top: 190px;
+    left: 183px;
+}
+
+.bar4 {
+	width: 140px;
+    height: 15px;
+    background-image: linear-gradient(45deg,#98b3ff00 0% 8%, #98b3ff);
+    transform: rotateZ(45deg);
+    top: 192px;
+    left: -26px;
+}
+
+.college-name, .name, .post, .event-name, .department {
+	font-family: captainmarvel;
+	font-size: 16px;
+	color: ivory;
+	position: absolute;
+	text-shadow:0px 2px 1px #303030;
+}
+
+.college-name {
+	left: 12px;
+    top: 10px;
+}
+
+.name {
+	font-size: 20px;
+	left: 50px;
+    top: 128px;
+}
+
+.post {
+	left: 65px;
+    top: 163px;
+}
+
+.event-name {
+	left: 100px;
+    top: 309px;
+    z-index: 2;
+    font-size: 20px;
+	text-shadow: 0px 2px 1px black;
+}
+
+.department {
+	top: 60px;
+	left: 67px;
+}
+
+.particle {
+	width: 5px;
+	height: 5px;
+	background-color: snow;
+	border-radius: 50%;
+}
+
+button {
+	box-sizing: border-box;
+	background-color: white;
+	position: absolute;
+	top: 0px;
+	left: -200px;
+	border: none;
+	padding: 10px;
+	font-family: captainmarvel;
+	font-size: 16px;
+	opacity: 0.7;
+	box-shadow: 0px 2px 3px 1px #353535;	
+}
+
+button:hover {
+	opacity: 1.0;
+	transition-duration: 0.4s;
+	box-shadow: 0px 2px 3px 1px #353535;
+	transition-timing-function: ease-out;
+	color: whitesmoke;
+	font-size: 18px;
+	box-sizing: border-box;
+	background-color: orangered;
+	cursor: pointer;
+}
+
+.contents{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	z-index: 2;
+}
+
+button:hover+.background {
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateX(45deg)
+			rotateZ(45deg);
+	box-shadow: inset 0px 0px 1px 1px #ffffff,35px 30px 40px 0.2px #05050580;
+	position: relative;
+	top: 80px;
+}
+
+button:hover ~div:nth-of-type(5){
+	top: 150px;
+	left: 5px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateZ(152deg)
+				rotateX(41deg);				
+}
+
+button:hover ~div:nth-of-type(4){
+	top: 253px;
+	left: 132px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateZ(322deg)
+				rotateX(169deg);	
+}
+
+button:hover ~div:nth-of-type(3){
+	top: 280px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateZ(322deg)
+				rotateX(142deg);
+}
+
+button:hover ~div:nth-of-type(2){
+	top: 180px;
+	left: -15px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateZ(152deg)
+				rotateX(71deg);	
+}
+
+button:hover ~div:nth-of-type(6){
+	top: 50px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateX(45deg)
+			rotateZ(45deg);
+	box-shadow: 5px 5px 10px 0.1px #353535;
+	border: 4px solid #dfbd00;
+}
+
+button:hover ~div:nth-of-type(7){
+	top: 200px;
+	left: -70px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;
+	transform: rotateX(45deg)
+			rotateZ(45deg)
+			scale(95%);
+	border: none;
+	opacity: 1.0;
+}
+
+button:hover ~div:nth-of-type(8){
+	top: -50px;
+	left: 150px;
+	transition-timing-function: ease-in-out;
+	transition-duration: 1s;	
+	transform: rotateX(45deg)
+			rotateZ(45deg)
+			scale(0.85);
+	color: black;
+}
