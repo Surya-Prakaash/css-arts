@@ -1,0 +1,100 @@
+body {
+	background-color: khaki;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+	align-items: center;
+
+}
+
+h1 {
+	font-family: 'Outfit', sans-serif;
+	font-weight: 600;
+	font-size: 50px;
+	text-align: center;
+	color: tomato;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: max-content;
+	width: max-content;
+	position: relative;
+}
+
+.beacon {
+	width: 10px;
+	height: 10px;
+	border: 5px solid #000;
+}
+
+.beacon::after {
+	content: "";
+	display: flex;
+	width: 5px;
+	height: 15px;
+	background-color: #000;
+	position: absolute;
+	top: 12px;
+	left: 2.5px;
+}
+
+.top, .bottom {
+	width: 80px;
+	height: 10px;
+}
+
+.neck {
+    width: 86px;
+    height: 10px;
+    transform: rotateZ(335deg);
+}
+
+.face-left, .face-right {
+	width: 10px;
+	height: 35px;
+}
+
+.body-left, .body-right {
+	width: 10px;
+}
+
+.arm-left, .arm-right {
+	height: 50px;
+	width: 10px;
+}
+
+.wheel {
+	width: 50px;
+	height: 10px;
+}
+
+.top, .face-left, .face-right, .body-left, .body-right, .arm-left, .arm-right, .bottom, .wheel, .neck, .beacon {
+	position: absolute;
+	border-radius: 10px;
+	background-color: #000;
+}
+
+.top {top: 0px;	left: 0px;}
+
+.face-left {top: 0px;	left: 0px;}
+
+.face-right {top: 0px;	left: 70px;}
+
+.neck {	top: 42px;	left: -3px;}
+
+.body-left {top: 59px;	left: 0px;	height: 65px;}
+
+.body-right {top: 45px;	left: 70px;	height: 80px;}
+
+.arm-left {	top: 60px;	left: -15px;}
+
+.arm-right {top: 60px;	left: 85px;}
+
+.bottom {top: 115px;	left: 0px;}
+
+.wheel {top: 123px;	left: 15px;}
+
+.beacon {top: -30px; left: 30px; border-radius: 50%; background-color: transparent;}

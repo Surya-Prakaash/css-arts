@@ -1,18 +1,26 @@
 :root {
-	--shrink-color: #666;
-	--expand-color: #999;
+	
+	--circle-shrink-color: orangered;
+	--circle-expand-color: orangered;
+	--square-shrink-color: lightgreen;
+	--square-expand-color: lightgreen;
 	--line-color: #000000;
 }
 body {
 	background-color: #404040;
-	height: 100vh;
+	height: 100vh;	
 }
 
-.section1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+.container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.section1, .section2 {
+	width: 200px;
+	height: 200px;
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -20,7 +28,7 @@ body {
 }
 
 .circle,.circle1, .circle2, .circle3 {
-	border: 4px inset  var(--shrink-color);
+	border: 4px inset  var(--circle-shrink-color);
 	border-radius: 50%;
 	position: absolute;
 	animation: border;
@@ -32,7 +40,7 @@ body {
 .circle {
 	width: 20px;
 	height: 20px;
-	background-color: var(--shrink-color);
+	background-color: var(--circle-shrink-color);
 	border: none;
 	animation: circle;
 	animation-iteration-count: infinite;
@@ -60,24 +68,23 @@ body {
 }
 
 @keyframes border {
-	0% {border: 4px inset  var(--shrink-color); transform: rotate(0deg);}
-	12% {border: 4px inset  var(--shrink-color);transform: scale(75%);}
-	24% {border: 4px inset  var(--shrink-color);transform: scale(50%) rotate(200deg);}
+	0% {border: 4px inset  var(--circle-shrink-color); transform: rotate(200deg);}
+	12% {border: 4px inset  var(--circle-shrink-color);transform: scale(75%);}
+	24% {border: 4px inset  var(--circle-shrink-color);transform: scale(50%) rotate(200deg);}
 	36% {border: none; transform: scale(0%) rotate(-200deg);}
-	48% {border: 4px outset var(--expand-color);transform: scale(50%);}
-	60% {border: 4px outset var(--expand-color);transform: scale(75%);}
-	72% {border: 4px outset var(--expand-color); transform: scale(100%) rotate(200deg);}
-	100% {border: 4px outset var(--expand-color); transform: scale(100%) rotate(200deg);}
-
+	48% {border: 4px outset var(--circle-expand-color);transform: scale(50%);}
+	60% {border: 4px outset var(--circle-expand-color);transform: scale(75%);}
+	72% {border: 4px outset var(--circle-expand-color); transform: scale(100%) rotate(200deg);}
+	100% {border: 4px outset var(--circle-expand-color); transform: scale(100%) rotate(200deg);}
 }
 
 @keyframes circle {
-	0% {transform: scale(1.0);border: 3px dashed transparent; outline: 3px solid var(--shrink-color);}
-	20% {transform: scale(0.75);border: 3px dashed transparent; outline: 3px solid var(--shrink-color);}
-	40% {transform: scale(0.5);border: 3px dashed transparent; outline: 3px solid var(--shrink-color); background-color: var(--shrink-color);}
-	60% {transform: scale(0.75);border: 3px dashed transparent; outline: 3px solid var(--shrink-color);}
-	80% {background-color: var(--expand-color);}
-	100% {transform: scale(1.0); border: 3px dashed transparent; outline: 3px solid var(--shrink-color); background-color: var(--expand-color);}
+	0% {transform: scale(1.0);border: 3px dashed transparent; outline: 3px solid var(--circle-shrink-color);}
+	20% {transform: scale(0.75);border: 3px dashed transparent; outline: 3px solid var(--circle-shrink-color);}
+	40% {transform: scale(0.5);border: 3px dashed transparent; outline: 3px solid var(--circle-shrink-color); background-color: var(--circle-shrink-color);}
+	60% {transform: scale(0.75);border: 3px dashed transparent; outline: 3px solid var(--circle-shrink-color);}
+	80% {background-color: var(--circle-expand-color);}
+	100% {transform: scale(1.0); border: 3px dashed transparent; outline: 3px solid var(--circle-shrink-color); background-color: var(--circle-expand-color);}
 }
 
 .line1, .line2 {
@@ -86,7 +93,6 @@ body {
 	background-color: var(--line-color);
 	position: absolute;
 	border-radius: 50%;
-
 }
 
 .line1 {
@@ -110,10 +116,109 @@ body {
 @keyframes line1 {
 	0% {transform: rotate(45deg); background-color: var(--line-color);}
 	100% { transform: rotate(-135deg); background-color: var(--line-color);}
-
 }
+
 @keyframes line2 {
 	0% {transform: rotate(135deg); background-color: var(--line-color);}
 	100% { transform: rotate(-45deg); background-color: var(--line-color);}
+}
 
+
+.square,.square1, .square2, .square3 {
+	border: 4px solid var(--square-shrink-color);
+	border-radius: 0%;
+	position: absolute;
+	animation: square-border;
+	animation-timing-function: ease-in-out;
+	animation-duration: 2s;
+	animation-iteration-count:infinite;
+
+}
+
+.square {
+	width: 20px;
+	height: 20px;
+	background-color: var(--square-shrink-color);
+	border: none;
+	border-radius: 0%;
+	animation: square;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+}
+
+.square1 {
+	width: 60px;
+	height: 60px;
+	animation-delay: 0.2s;
+}
+
+.square2, .square3 {
+	margin: 0px;
+	padding: 0px;
+	width: 90px;
+	height: 90px;
+	animation-delay: .4s;
+}
+
+.square3 {
+	width: 120px;
+	height: 120px;
+	animation-delay: .6s;
+}
+
+@keyframes square-border {
+	0% {border: 4px inset  var(--square-shrink-color);}
+	12% {border: 4px inset var(--square-shrink-color);transform: scale(75%);}
+	24% {border: 4px inset var(--square-shrink-color);transform: scale(50%);}
+	36% {border: none; transform: scale(0%);}
+	48% {border: 4px outset var(--square-expand-color);transform: scale(50%);}
+	60% {border: 4px outset var(--square-expand-color);transform: scale(75%);}
+	72% {border: 4px outset var(--square-expand-color); transform: scale(100%);}
+	100% {border: 4px outset var(--square-expand-color); transform: scale(100%);}
+}
+
+@keyframes square {
+	0% {transform: scale(1.0);border: 3px dashed transparent;}
+	20% {transform: scale(0.75);border: 3px dashed transparent;}
+	40% {transform: scale(0.5);border: 3px dashed transparent; background-color: var(--square-shrink-color);}
+	60% {transform: scale(0.75);border: 3px dashed transparent;}
+	80% {background-color: var(--sqaure-expand-color);}
+	100% {transform: scale(1.0); border: 3px dashed transparent; background-color: var(--square-expand-color);}
+}
+
+.line3, .line4 {
+	width: 2px;
+	height: 200px;
+	background-color: #404040;
+	border-radius: 0%;
+	position: absolute;
+
+}
+
+.line3 {
+	transform: rotate(45deg);
+	animation: line3;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: reverse;
+
+}
+
+.line4 {
+	transform: rotateZ(135deg);
+	animation: line4;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes line3 {
+	0% {transform:rotate(45deg); background-color: #404040;}
+	100% { transform:rotate(-135deg); background-color: #404040;}
+}
+
+@keyframes line4 {
+	0% {transform:  rotateZ(-45deg); background-color: #404040;}
+	100% { transform: rotateZ(135deg); background-color: #404040;}
 }

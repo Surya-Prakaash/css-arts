@@ -1,0 +1,56 @@
+body {
+	background-color:orchid;
+	height: 100vh;
+
+}
+
+body > div {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	perspective:1000px;
+	perspective-origin: top;
+}
+
+.head {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transform-style: preserve-3d;
+	animation-name: head;
+	animation-iteration-count: infinite;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+
+}
+
+.head:hover {
+	animation-play-state: paused;
+}
+
+.front, .back, .left, .right, .top, .bottom {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: #7fffd450;
+	box-shadow: inset 0px 0px 5px 1px #00000050;
+}
+
+.front {transform: translateZ(50px);}
+
+.back {	transform: rotateY(180deg)	translateZ(50px);}
+
+.left {	transform: rotatey(-90deg) translateZ(50px);}
+
+.right {transform: rotatey(90deg) translateZ(50px);}
+
+.top {transform:translateY(-50px) rotateX(90deg);}
+
+.bottom {transform:translateY(50px) rotateX(90deg);}
+
+@keyframes head {
+ to {transform: rotateY(360deg);}
+}

@@ -1,0 +1,71 @@
+body {
+	height: 100vh;
+	background-color: tomato;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 15px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.section-1 {
+	transform: scale(1.2);
+	width: 100%;
+	display: flex;
+	position: relative;
+	margin-left:5px;
+	justify-content: center;
+}
+
+.section-1 >li {
+	position: relative;
+	list-style-type: none;
+	font-family: 'Outfit', sans-serif;	
+	font-size: 50px;
+	color: ivory;
+	font-weight: 800;
+}
+
+.section-1> li:nth-child(9) {
+	position: absolute;
+	top: 0px;
+	left: 930px;
+	animation-name: O;
+	animation-duration: 2s;
+}
+
+@keyframes O {
+	0% {left: 1600px;}
+	50% {left: 912px;}
+	75% {left: 912px;}
+	100% {left: 930px;}
+}
+
+.section-1> li:nth-child(8) {
+	transform-origin: 50% 100% 0px;
+	animation-name: I;
+	animation-duration: 1s;
+	animation-delay: 1s;
+}
+
+@keyframes I {
+	0%{transform: rotateZ(0deg);}
+	50% {transform: rotateZ(-30deg); left: -5px;}
+	70% {transform: rotateZ(-30deg); left: -5px;}
+	100% {transform: rotateZ(0deg)}
+}
+
+.section-2 {
+	width: 100%;
+	display: flex;
+	position: relative;
+	margin-left:5px;
+}
