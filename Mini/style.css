@@ -3,25 +3,31 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	gap: 100px;
 	align-items: center;
-
+	overflow: hidden;
+	perspective: 550px;
+	perspective-origin: top;
 }
 
-h1 {
+.mini {
+	position: absolute;
 	font-family: 'Outfit', sans-serif;
 	font-weight: 600;
 	font-size: 50px;
-	text-align: center;
 	color: tomato;
 }
 
 .container {
+	margin-top: 300px;
 	display: flex;
 	flex-direction: column;
-	height: max-content;
-	width: max-content;
 	position: relative;
+	top: 0px;
+	left: -38px;
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+	
+
 }
 
 .beacon {
@@ -75,26 +81,95 @@ h1 {
 	position: absolute;
 	border-radius: 10px;
 	background-color: #000;
+
 }
 
 .top {top: 0px;	left: 0px;}
-
 .face-left {top: 0px;	left: 0px;}
-
 .face-right {top: 0px;	left: 70px;}
-
 .neck {	top: 42px;	left: -3px;}
-
 .body-left {top: 59px;	left: 0px;	height: 65px;}
-
 .body-right {top: 45px;	left: 70px;	height: 80px;}
-
 .arm-left {	top: 60px;	left: -15px;}
-
 .arm-right {top: 60px;	left: 85px;}
-
 .bottom {top: 115px;	left: 0px;}
-
 .wheel {top: 123px;	left: 15px;}
-
 .beacon {top: -30px; left: 30px; border-radius: 50%; background-color: transparent;}
+
+
+.top-left, .top-right, .bottom-left, .bottom-right, .center {
+	width: 30px;
+	height: 30px;
+	background-color: teal;
+	position: absolute;
+	border-radius: 5px;
+	transform: rotateX(45deg);
+}
+
+.top-left {
+	top: 100px;
+	left: 300px;
+}
+
+.top-right {
+	top: 100px;
+	left: 1200px;
+}
+
+.bottom-left {
+	top: 600px;
+	left: 100px;
+}
+
+.bottom-right {
+	top: 600px;
+	left:1400px;
+}
+
+.center {
+	top: 65%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.top-left:hover ~div:nth-child(7) {
+	top: -250px;
+	left: -400px;
+	transform: scale(0.5);
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
+
+.top-right:hover ~div:nth-child(7) {
+	top: -250px;
+	left: 370px;
+	transform: scale(0.5);
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
+
+.bottom-left:hover ~ div:nth-child(7) {
+	top: 200px;
+    left: -560px;
+    transform: scale(1.25);
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
+
+
+.bottom-right:hover ~ div:nth-child(7) {
+	top: 200px;
+    left: 470px;
+    transform: scale(1.25);
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
+
+.center:hover ~ div:nth-child(7) {
+	top: 0px;
+	left: -38px;
+    transform: scale(1.0);
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
